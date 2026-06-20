@@ -26,13 +26,13 @@ jobs:
           python-version: "3.12"
 
       - name: Create virtual env
-        uses: scripts/create_venv.sh
+        run: scripts/create_venv.sh
 
       - name: Check format
-        uses: scripts/format_chck.sh
+        run: scripts/format_chck.sh
 
       - name: Lint
-        uses: scripts/lint.sh
+        run: scripts/lint.sh
 
       - name: Testing
-        uses: scripts/test.sh
+        run: scripts/test.sh
