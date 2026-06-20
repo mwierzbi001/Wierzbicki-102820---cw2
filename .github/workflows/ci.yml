@@ -35,4 +35,4 @@ jobs:
         run: bash scripts/lint.sh
 
       - name: Testing
-        run: bash scripts/test.sh
+        run: PYTHONPATH=. pytest -v
