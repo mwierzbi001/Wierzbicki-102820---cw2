@@ -1,0 +1,38 @@
+name: Wierzbicki-102820---cw2
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Create virtual env
+        run: bash scripts/create_venv.sh
+
+      - name: Check format
+        run: bash scripts/format_chck.sh
+
+      - name: Lint
+        run: bash scripts/lint.sh
+
+      - name: Testing
+        run: PYTHONPATH=. pytest -v
