@@ -1,5 +1,6 @@
 """Calculator logic"""
 
+
 def add(a: int, b: int) -> int:
     """Sum of numbers"""
     return a + b

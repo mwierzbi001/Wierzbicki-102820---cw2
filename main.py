@@ -1,4 +1,5 @@
 """Application"""
+
 import argparse
 
 from application.calculator import add, sub
