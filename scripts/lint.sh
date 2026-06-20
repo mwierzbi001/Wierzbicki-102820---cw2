@@ -2,4 +2,4 @@
 
 source .venv/bin/activate
 
-pylint app main.py
+pylint application main.py
